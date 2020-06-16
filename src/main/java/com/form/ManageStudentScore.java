@@ -21,6 +21,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -29,6 +30,8 @@ import javax.swing.table.DefaultTableModel;
 public class ManageStudentScore extends javax.swing.JFrame {
 
     static public String class_id = "";
+    static public String student_id ="";
+    static public String fullname ="";
       private String[] columnNames = {
         "STT", "MSSV", "Ho Ten", "Diem GK", "Diem CK", "Diem Khac", "Diem Tong"
     };
@@ -263,26 +266,26 @@ public class ManageStudentScore extends javax.swing.JFrame {
 
     private void bt_EditScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_EditScoreActionPerformed
         // TODO add your handling code here:
-//        if(!malop.equals("")&&!mssv.equals(""))
-//        {
-//            SuaDiem1 sd =new SuaDiem1();
-//            sd.setVisible(true);
-//            this.setVisible(false);
-//        }
-//        else
-//        {
-//            JOptionPane.showMessageDialog(null, "Ch?a ch?n sinh vi?n c?n s?a.", "Notification", JOptionPane.WARNING_MESSAGE);
-//        }
+        if(!class_id.equals(""))
+        {
+           EditScore edit=new EditScore();
+            edit.setVisible(true);
+            this.setVisible(false);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Ch?a ch?n sinh vi?n c?n s?a.", "Notification", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_bt_EditScoreActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        // TODO add your handling code here:
-//        malop =(String) jcb_lop.getSelectedItem();
-//        mamon =(String) jcb_mon.getSelectedItem();
-//        int i=jTable1.getSelectedRow();
-//        TableModel model=jTable1.getModel();
-//        mssv=model.getValueAt(i,1).toString();
-//        hoten=model.getValueAt(i,2).toString();
+         
+        class_id =(String) cbxClassWithSubject.getSelectedItem();
+        int i=jTable1.getSelectedRow();
+        TableModel model=jTable1.getModel();
+       student_id=model.getValueAt(i,1).toString();
+       fullname=model.getValueAt(i,2).toString();
+       
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void cbxClassWithSubjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxClassWithSubjectActionPerformed
@@ -375,6 +378,8 @@ public class ManageStudentScore extends javax.swing.JFrame {
     }
      private void listStudentInClass(String class_id) {
         int stt = 1;
+        float countpass =0;
+        float countfail=0;
         ClassWithSubjectDAO classDAO = new ClassWithSubjectDAO();
         StudentDAO studentDAO = new StudentDAO();
         List<ClassWithSubjectEntity> list = classDAO.getList(class_id.trim());
@@ -382,19 +387,32 @@ public class ManageStudentScore extends javax.swing.JFrame {
         tableModel.setColumnIdentifiers(columnNames);
         for (ClassWithSubjectEntity c : list) {
             String[] rows = new String[7];
+            Double midterm = c.getMidTermScore();
+            Double endterm = c.getEndTermScore();
+            Double otherscore = c.getOtherScore();
+            Double finalscore =c.getFinalScore();
+            if(finalscore >=5)countpass++;
+            else countfail++;
             StudentEntity s = studentDAO.get(c.getStudentId().trim());
             rows[0] = String.valueOf(stt);
             rows[1] = s.getStudentId();
             rows[2] =s.getFullName();
-            rows[3] = c.getMidTermScore().toString();
-            rows[4] = c.getEndTermScore().toString();
-            rows[5] = c.getOtherScore().toString();
-            rows[6] = c.getFinalScore().toString();
+            rows[3] = midterm.toString();
+            rows[4] = endterm.toString();
+            rows[5] = otherscore.toString();
+            rows[6] = finalscore.toString();
             tableModel.addRow(rows);
             stt++;
 
         }
         jTable1.setModel(tableModel);
+        txt_pass.setText(String.valueOf(countpass));
+        txt_fail.setText(String.valueOf(countfail));
+        float percent1= countpass*100/list.size();
+        float percent2= countfail*100/list.size();
+        txt_percent1.setText(String.valueOf(percent1));
+        txt_percent2.setText(String.valueOf(percent2));
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
