@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
  * @author Nhi
  */
 public class Login extends javax.swing.JFrame {
+    public static String student_id="";
 
     /**
      * Creates new form Login
@@ -138,8 +139,12 @@ public class Login extends javax.swing.JFrame {
                     new AdminDashboard().setVisible(true);
                 });
             } else {
+                 student_id = username;
+                 System.out.println("student: "+student_id);
                 java.awt.EventQueue.invokeLater(() -> {
+                   
                     new StudentDashboard().setVisible(true);
+                    
                 });
             }
         } else {

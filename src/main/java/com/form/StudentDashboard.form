@@ -24,12 +24,12 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="btnLogout" alignment="1" min="-2" pref="284" max="-2" attributes="0"/>
                   <Component id="btnReexam" alignment="1" min="-2" pref="284" max="-2" attributes="0"/>
                   <Component id="btnScore" alignment="1" min="-2" pref="284" max="-2" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="252" max="-2" attributes="0"/>
                   </Group>
@@ -67,11 +67,13 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Xem Diem"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnScoreActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnReexam">
       <Properties>
         <Property name="text" type="java.lang.String" value="Phuc Khao"/>
-        <Property name="actionCommand" type="java.lang.String" value="Phuc Khao"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReexamActionPerformed"/>

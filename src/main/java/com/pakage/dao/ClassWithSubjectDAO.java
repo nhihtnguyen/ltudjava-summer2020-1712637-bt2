@@ -139,6 +139,7 @@ public class ClassWithSubjectDAO extends AbstractDAO<ClassWithSubjectEntity> {
         return list;
      }
      
+     
      public static List<String> getListClass()
      {
          Session session = HibernateUtils.getSessionFactory().openSession();
@@ -146,6 +147,22 @@ public class ClassWithSubjectDAO extends AbstractDAO<ClassWithSubjectEntity> {
         try {
           
             String hql = "select classId from ClassWithSubjectEntity c group by classId";
+            Query query = session.createQuery(hql);
+            list = query.list();
+        } catch (HibernateException ex) {
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+        return list;
+     }
+     
+        public static List<ClassWithSubjectEntity> getListByStudent(String student_id) {
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        List<ClassWithSubjectEntity> list = null;
+        try {
+          
+            String hql = "from ClassWithSubjectEntity c where c.studentId = '"+student_id+"'";
             Query query = session.createQuery(hql);
             list = query.list();
         } catch (HibernateException ex) {

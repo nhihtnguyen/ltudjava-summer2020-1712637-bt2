@@ -36,6 +36,7 @@ public class AdminDashboard extends javax.swing.JFrame {
         btnReexam = new javax.swing.JButton();
         btnChangePassword = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
+        btnListReexam = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,11 +71,23 @@ public class AdminDashboard extends javax.swing.JFrame {
             }
         });
 
-        btnReexam.setText("Quan Ly Phuc Khao");
+        btnReexam.setText("Tao Phuc Khao");
+        btnReexam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReexamActionPerformed(evt);
+            }
+        });
 
         btnChangePassword.setText("Doi mat khau");
 
         btnLogout.setText("Dang Xuat");
+
+        btnListReexam.setText("Danh Sach Phuc Khao");
+        btnListReexam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListReexamActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,6 +95,7 @@ public class AdminDashboard extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnListReexam, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnReexam, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnManageClass, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -113,10 +127,12 @@ public class AdminDashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnReexam)
                 .addGap(18, 18, 18)
+                .addComponent(btnListReexam)
+                .addGap(18, 18, 18)
                 .addComponent(btnChangePassword)
                 .addGap(18, 18, 18)
                 .addComponent(btnLogout)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
@@ -145,6 +161,16 @@ public class AdminDashboard extends javax.swing.JFrame {
         m.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnManageStudentScoreActionPerformed
+
+    private void btnReexamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReexamActionPerformed
+        CreateRemarking c = new   CreateRemarking();
+        c.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnReexamActionPerformed
+
+    private void btnListReexamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListReexamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnListReexamActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,6 +209,7 @@ public class AdminDashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChangePassword;
+    private javax.swing.JButton btnListReexam;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnManageClass;
     private javax.swing.JButton btnManageSchedule;

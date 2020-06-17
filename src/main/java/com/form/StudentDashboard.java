@@ -16,6 +16,7 @@ public class StudentDashboard extends javax.swing.JFrame {
      */
     public StudentDashboard() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
 
     /**
@@ -38,9 +39,13 @@ public class StudentDashboard extends javax.swing.JFrame {
         jLabel1.setText("Trang chu");
 
         btnScore.setText("Xem Diem");
+        btnScore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnScoreActionPerformed(evt);
+            }
+        });
 
         btnReexam.setText("Phuc Khao");
-        btnReexam.setActionCommand("Phuc Khao");
         btnReexam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReexamActionPerformed(evt);
@@ -56,12 +61,12 @@ public class StudentDashboard extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnReexam, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnScore, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
                         .addComponent(jLabel1)
                         .addGap(252, 252, 252))
                     .addComponent(btnChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -89,6 +94,12 @@ public class StudentDashboard extends javax.swing.JFrame {
     private void btnReexamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReexamActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnReexamActionPerformed
+
+    private void btnScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnScoreActionPerformed
+        StudentScore s = new StudentScore();
+        s.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnScoreActionPerformed
 
     /**
      * @param args the command line arguments
