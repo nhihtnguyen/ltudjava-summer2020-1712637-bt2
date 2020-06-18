@@ -169,7 +169,10 @@ public class AdminDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_btnReexamActionPerformed
 
     private void btnListReexamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListReexamActionPerformed
-        // TODO add your handling code here:
+        ListReexam l = new ListReexam();
+        l.setVisible(true);
+        this.setVisible(false);
+        
     }//GEN-LAST:event_btnListReexamActionPerformed
 
     /**

@@ -5,8 +5,13 @@
  */
 package com.form;
 
+import com.entity.StudentRequestEntity;
+import com.pakage.dao.StudentRequestDAO;
 import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -14,15 +19,17 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ListReexam extends javax.swing.JFrame {
     
-
+   private String[] columnNames = {"STT", "MSSV", "Ho ten", "Ma mon", "Cot diem can phuc khao", "Diem mon muon", "Ly do", "Trang thai"};
+   private String request_id ="";
+ 
     /**
      * Creates new form ListReexam
      */
     public ListReexam() {
         initComponents();
+        ListRequest();
     }
-    
-    
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,27 +40,16 @@ public class ListReexam extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel6 = new javax.swing.JLabel();
-        cbxRequest = new javax.swing.JComboBox();
         btnNoUpdate = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btnUpdated = new javax.swing.JButton();
         btnUnread = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setText("Dot");
-
-        cbxRequest.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        cbxRequest.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbxRequest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxRequestActionPerformed(evt);
-            }
-        });
 
         btnNoUpdate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnNoUpdate.setText("Khong cap nhat");
@@ -108,6 +104,11 @@ public class ListReexam extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Cap nhat trang thai: ");
+
+        label.setFont(new java.awt.Font("Montserrat", 0, 32)); // NOI18N
+        label.setText("DANH SACH PHUC KHAO");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -117,65 +118,107 @@ public class ListReexam extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 733, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbxRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(79, 79, 79)
-                        .addComponent(btnNoUpdate)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnUpdated, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnUnread, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnBack)))
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnNoUpdate)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnUpdated, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnUnread, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnBack))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(label)
+                                .addGap(159, 159, 159)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnBack)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel6)
-                        .addComponent(cbxRequest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnNoUpdate)
                         .addComponent(btnUpdated)
-                        .addComponent(btnUnread)))
+                        .addComponent(btnUnread)
+                        .addComponent(jLabel1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cbxRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxRequestActionPerformed
-       
-    }//GEN-LAST:event_cbxRequestActionPerformed
-
     private void btnNoUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoUpdateActionPerformed
-
+       StudentRequestDAO sqDAO = new StudentRequestDAO();
+        if(!request_id.equals(""))
+        {
+            if(sqDAO.updateStatus(request_id,"Chua cap nhat diem")==true);
+                {
+                    JOptionPane.showMessageDialog(null, "Cap nhat don phuc khao thanh cong.");
+                }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Chua chon don phuc khao de cap nhat", "Notification", JOptionPane.WARNING_MESSAGE);
+        }
+              ListRequest();
     }//GEN-LAST:event_btnNoUpdateActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
+       AdminDashboard ad = new AdminDashboard();
+        ad.setVisible(true);
+        this.setVisible(false);
 
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-        //malop =(String) jcb_lop.getSelectedItem();
-        //mamon =(String) jcb_mon.getSelectedItem();
+            int i=jTable1.getSelectedRow();
+        TableModel model=jTable1.getModel();
+        request_id=model.getValueAt(i,0).toString();
+  
  
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void btnUpdatedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdatedActionPerformed
-        // TODO add your handling code here:
+              StudentRequestDAO sqDAO = new StudentRequestDAO();
+        if(!request_id.equals(""))
+        {
+            if(sqDAO.updateStatus(request_id,"Da cap nhat diem")==true);
+                {
+                    JOptionPane.showMessageDialog(null, "Cap nhat don phuc khao thanh cong.");
+                }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Chua chon don phuc khao de cap nhat", "Notification", JOptionPane.WARNING_MESSAGE);
+        }
+        ListRequest();
     }//GEN-LAST:event_btnUpdatedActionPerformed
 
     private void btnUnreadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnreadActionPerformed
-        // TODO add your handling code here:
+                      StudentRequestDAO sqDAO = new StudentRequestDAO();
+        if(!request_id.equals(""))
+        {
+            if(sqDAO.updateStatus(request_id,"Chua xem")==true);
+                {
+                    JOptionPane.showMessageDialog(null, "Cap nhat don phuc khao thanh cong.");
+                }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Chua chon don phuc khao de cap nhat", "Notification", JOptionPane.WARNING_MESSAGE);
+        }
+        ListRequest();
     }//GEN-LAST:event_btnUnreadActionPerformed
 
     /**
@@ -212,6 +255,33 @@ public class ListReexam extends javax.swing.JFrame {
             }
         });
     }
+    //private String[] columnNames = {"STT", "MSSV", "Ho ten", "Ma mon", "Cot diem can phuc khao", "Diem mon muon", "Ly do", "Trang thai"};
+    private void ListRequest()
+    {
+       
+        StudentRequestDAO sqDAO = new StudentRequestDAO();
+        List<StudentRequestEntity> list = sqDAO.listAll();
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.setColumnIdentifiers(columnNames);
+        if(list.size()>0)
+        {
+            for (StudentRequestEntity sq: list){
+                String[] rows = new String[8];
+                rows[0] = String.valueOf(sq.getRequestId());
+                rows[1] = sq.getStudentId();
+                rows[2] = sq.getName();
+                rows[3] = sq.getSubjectId();
+                rows[4]=sq.getScoreName();
+                rows[5]=String.valueOf(sq.getScore());
+                rows[6]=sq.getReason();
+                rows[7]=sq.getStatus();
+                tableModel.addRow(rows);
+          
+            }
+            jTable1.setModel(tableModel);
+        }
+       
+    }
     
    
 
@@ -220,9 +290,9 @@ public class ListReexam extends javax.swing.JFrame {
     private javax.swing.JButton btnNoUpdate;
     private javax.swing.JButton btnUnread;
     private javax.swing.JButton btnUpdated;
-    private javax.swing.JComboBox cbxRequest;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel label;
     // End of variables declaration//GEN-END:variables
 }

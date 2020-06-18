@@ -92,7 +92,9 @@ public class StudentDashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnReexamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReexamActionPerformed
-        // TODO add your handling code here:
+        FormRemarking f = new FormRemarking();
+        f.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnReexamActionPerformed
 
     private void btnScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnScoreActionPerformed

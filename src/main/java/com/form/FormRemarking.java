@@ -5,8 +5,15 @@
  */
 package com.form;
 
-import com.entity.StudentRequestDetailEntity;
+import com.entity.ClassWithSubjectEntity;
+import com.entity.StudentEntity;
+import com.entity.StudentRequestEntity;
 import javax.swing.JOptionPane;
+import static com.form.Login.student_id;
+import com.pakage.dao.ClassWithSubjectDAO;
+import com.pakage.dao.StudentDAO;
+import com.pakage.dao.StudentRequestDAO;
+import java.util.List;
 
 /**
  *
@@ -19,6 +26,25 @@ public class FormRemarking extends javax.swing.JFrame {
      */
     public FormRemarking() {
         initComponents();
+        initLayout();
+    }
+    
+    private void initLayout()
+    {
+        txtStudentId.setText(student_id);
+        txtStudentId.setEnabled(false);
+        StudentDAO studentDAO = new StudentDAO();
+        StudentEntity e= studentDAO.get(student_id);
+        txtFullname.setText(e.getFullName());
+        txtFullname.setEnabled(false);
+        cbxScoreName.removeAllItems();
+         String[] listColumn = {"Giua ky", "Cuoi ky", "Diem khac","Diem tong"};
+        for (String listColumn1 : listColumn) {
+             cbxScoreName.addItem(listColumn1);
+        }
+       
+
+
     }
 
     /**
@@ -31,8 +57,7 @@ public class FormRemarking extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        cbxSubjectId = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        btnSubmit = new javax.swing.JButton();
         txtStudentId = new javax.swing.JTextField();
         jlabel_Username = new javax.swing.JLabel();
         jlabel_Password = new javax.swing.JLabel();
@@ -45,37 +70,36 @@ public class FormRemarking extends javax.swing.JFrame {
         txtReason = new javax.swing.JEditorPane();
         jlabel_Password4 = new javax.swing.JLabel();
         txtScore = new javax.swing.JTextField();
+        txtSubject = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        cbxSubjectId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setText("Phúc kh?o");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnSubmit.setText("Phúc kh?o");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSubmitActionPerformed(evt);
             }
         });
 
         jlabel_Username.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jlabel_Username.setText("Mã s? sinh viên");
+        jlabel_Username.setText("Ma so sinh vien");
         jlabel_Username.setToolTipText("");
 
         jlabel_Password.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jlabel_Password.setText("?i?m phúc kh?o");
+        jlabel_Password.setText("Diem mong muon");
         jlabel_Password.setToolTipText("");
 
         jlabel_Password1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jlabel_Password1.setText("C?t ?i?m");
+        jlabel_Password1.setText("Cot diem");
         jlabel_Password1.setToolTipText("");
 
         jlabel_Password2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jlabel_Password2.setText("H? và tên");
+        jlabel_Password2.setText("Ho va ten");
         jlabel_Password2.setToolTipText("");
 
         jlabel_Password3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jlabel_Password3.setText("Môn h?c");
+        jlabel_Password3.setText("Mon hoc");
         jlabel_Password3.setToolTipText("");
 
         cbxScoreName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -83,7 +107,7 @@ public class FormRemarking extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txtReason);
 
         jlabel_Password4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jlabel_Password4.setText("Lý do mu?n phúc kh?o");
+        jlabel_Password4.setText("Ly do phuc khao ");
         jlabel_Password4.setToolTipText("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -101,24 +125,19 @@ public class FormRemarking extends javax.swing.JFrame {
                     .addComponent(jlabel_Password4))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(cbxScoreName, 0, 237, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtStudentId)
-                        .addComponent(cbxSubjectId, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtFullname))
-                    .addComponent(txtScore, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                    .addComponent(cbxScoreName, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSubmit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtStudentId, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtFullname, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtScore, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtSubject))
                 .addContainerGap(216, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlabel_Password3)
-                    .addComponent(cbxSubjectId, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                .addGap(86, 86, 86)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlabel_Username)
                     .addComponent(txtStudentId, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -126,20 +145,27 @@ public class FormRemarking extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlabel_Password2)
                     .addComponent(txtFullname, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jlabel_Password3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtSubject, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlabel_Password1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbxScoreName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlabel_Password)
-                    .addComponent(txtScore, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtScore, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlabel_Password))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlabel_Password4)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(65, 65, 65))
         );
 
@@ -148,7 +174,7 @@ public class FormRemarking extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(45, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
@@ -162,18 +188,23 @@ public class FormRemarking extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
-        
-//        StudentRequestDetailEntity item = new StudentRequestDetailEntity(request_id, student_id,subject_id,score_name,score,reason,status);
-//        StudentRequestDetailDAO dao = new StudentRequestDetailDAO();
-//        Boolean isUpdate = dao.createitem);
-//        if (isUpdate) {
-//            JOptionPane.showMessageDialog(null, "Thành công", "Thêm sinh viên thành công !", JOptionPane.INFORMATION_MESSAGE);
-//        } else {
-//            JOptionPane.showMessageDialog(null, "Th?t b?i", "Thêm sinh viên th?t b?i !", JOptionPane.INFORMATION_MESSAGE);
-//        }
-    }//GEN-LAST:event_jButton1ActionPerformed
+       String fullname = txtFullname.getText();
+        String subject_id = txtSubject.getText();
+        String score_name= (String)cbxScoreName.getSelectedItem();
+        Double score = Double.valueOf(txtScore.getText());
+        String reason = txtReason.getText();
+        String status ="Chua xem";
+  StudentRequestEntity item = new StudentRequestEntity(student_id, fullname,subject_id,score_name,score,reason,status);
+    StudentRequestDAO dao = new StudentRequestDAO();
+        Boolean isUpdate = dao.create(item);
+        if (isUpdate) {
+            JOptionPane.showMessageDialog(null, "Thanh cong", "Them phuc khao thanh cong !", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "That bai", "Them phuc khao that bai !", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_btnSubmitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,9 +243,8 @@ public class FormRemarking extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox<String> cbxScoreName;
-    private javax.swing.JComboBox<String> cbxSubjectId;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jlabel_Password;
@@ -227,5 +257,6 @@ public class FormRemarking extends javax.swing.JFrame {
     private javax.swing.JEditorPane txtReason;
     private javax.swing.JTextField txtScore;
     private javax.swing.JTextField txtStudentId;
+    private javax.swing.JTextField txtSubject;
     // End of variables declaration//GEN-END:variables
 }

@@ -135,6 +135,11 @@ public class StudentScore extends javax.swing.JFrame {
         });
 
         btnRequest.setText("Xin phuc khao");
+        btnRequest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRequestActionPerformed(evt);
+            }
+        });
 
         lbStudentScore.setFont(new java.awt.Font("Montserrat", 0, 36)); // NOI18N
         lbStudentScore.setText("Diem mon hoc");
@@ -211,6 +216,10 @@ public class StudentScore extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Khong co lop.", "Warning", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_cbxClassWithSubjectActionPerformed
+
+    private void btnRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRequestActionPerformed
 
     /**
      * @param args the command line arguments

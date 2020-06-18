@@ -5,8 +5,8 @@
  */
 package com.form;
 
-import com.entity.StudentRequestEntity;
-import com.pakage.dao.StudentRequestDAO;
+import com.entity.ReExaminationEntity;
+import com.pakage.dao.ReExaminationDAO;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
@@ -147,6 +147,12 @@ public class CreateRemarking extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("TAO DON PHUC KHAO");
 
+        txtDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDateActionPerformed(evt);
+            }
+        });
+
         jLabel1.setText("Ten dot phuc khao :");
 
         bt_quayve.setText("Quay Ve");
@@ -258,7 +264,7 @@ public class CreateRemarking extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        StudentRequestDAO requestDAO = new StudentRequestDAO();
+        ReExaminationDAO requestDAO = new ReExaminationDAO();
         String name = txtName.getText();
         int dateFrom = Integer.valueOf(cmbDayFrom.getSelectedItem().toString());
         int monthFrom = Integer.valueOf(cmbMonthFrom.getSelectedItem().toString());
@@ -269,7 +275,7 @@ public class CreateRemarking extends javax.swing.JFrame {
         int monthTo = Integer.valueOf(cmbMonthTo.getSelectedItem().toString());
         int yearTo = Integer.valueOf(cmbYearTo.getSelectedItem().toString());
         Date dayTo = new GregorianCalendar(yearTo, monthTo - 1, dateTo).getTime();
-        StudentRequestEntity item = new  StudentRequestEntity(name,dayFrom, dayTo);
+        ReExaminationEntity item = new  ReExaminationEntity(name,dayFrom, dayTo);
         Boolean isUpdate = requestDAO.create(item);
         if (isUpdate){
             JOptionPane.showMessageDialog(null, "Thanh cong", "Them sinh vien thanh cong !", JOptionPane.INFORMATION_MESSAGE);
@@ -333,6 +339,10 @@ public class CreateRemarking extends javax.swing.JFrame {
         ad.setVisible(true);
         this.setVisible(false);          // TODO add your handling code here:
     }//GEN-LAST:event_bt_quayveActionPerformed
+
+    private void txtDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDateActionPerformed
 
     /**
      * @param args the command line arguments

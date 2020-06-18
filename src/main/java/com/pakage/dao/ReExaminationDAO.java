@@ -5,30 +5,29 @@
  */
 package com.pakage.dao;
 
-import com.entity.StudentRequestEntity;
+
+import com.entity.ReExaminationEntity;
 import com.utils.HibernateUtils;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 
 /**
  *
  * @author Nhi
  */
-public class StudentRequestDAO extends AbstractDAO<StudentRequestEntity> {
-
-    public List<StudentRequestEntity> listAll() {
-        return super.listAll("StudentRequestEntity");
+public class ReExaminationDAO extends AbstractDAO<ReExaminationEntity>{
+    public List<ReExaminationEntity> listAll() {
+        return super.listAll("ReExaminationEntity");
     }
-
-    public static StudentRequestEntity get(int request_id) {
+    
+       public static ReExaminationEntity get(int request_id) {
         Session session = HibernateUtils.getSessionFactory().openSession();
 
-        StudentRequestEntity sv = null;
+        ReExaminationEntity sv = null;
         try {
-            sv = (StudentRequestEntity) session.get(StudentRequestEntity.class, request_id);
+            sv = (ReExaminationEntity) session.get(ReExaminationEntity.class, request_id);
         } catch (HibernateException ex) {
             System.err.println(ex);
         } finally {
@@ -37,9 +36,10 @@ public class StudentRequestDAO extends AbstractDAO<StudentRequestEntity> {
 
         return sv;
     }
-
-    public boolean update(StudentRequestEntity item) {
-        if (item == null) {
+    
+    public boolean update(ReExaminationEntity item)
+    {
+             if (item == null) {
             return false;
         }
         Session session = HibernateUtils.getSessionFactory().openSession();
@@ -53,33 +53,15 @@ public class StudentRequestDAO extends AbstractDAO<StudentRequestEntity> {
             System.err.println(ex);
         } finally {
             session.close();
-
+        
         }
         return true;
     }
-
-    public static boolean updateStatus(String id, String status) {
-        Session session = HibernateUtils.getSessionFactory().openSession();
-        Transaction transaction = session.getTransaction();
-        try {
-            transaction.begin();
-            String hql = "update StudentRequestEntity set status ='" + status + "' where requestId="+id;
-            Query query = session.createQuery(hql);
-            query.executeUpdate();
-            transaction.commit();
-        } catch (HibernateException ex) {
-            transaction.rollback();
-            System.err.println(ex);
-        } finally {
-            session.close();
-        }
-        return true;
-    }
-
-    public boolean create(StudentRequestEntity c) {
+    
+        public boolean create(ReExaminationEntity c) {
         Session session = HibernateUtils.getSessionFactory().openSession();
 
-        if (ReExaminationDAO.get(c.getRequestId()) != null) {
+        if (ReExaminationDAO.get(c.getIndex()) != null) {
             return false;
         }
         Transaction transaction = null;
@@ -96,4 +78,6 @@ public class StudentRequestDAO extends AbstractDAO<StudentRequestEntity> {
 
         return true;
     }
+    
+    
 }

@@ -39,12 +39,12 @@ public class SubjectDAO extends AbstractDAO<SubjectEntity> {
         return list;
     }
 
-    public static SubjectEntity get(String student_id) {
+    public static SubjectEntity get(String subject_id) {
         Session session = HibernateUtils.getSessionFactory().openSession();
 
         SubjectEntity s = null;
         try {
-            s = (SubjectEntity) session.get(SubjectEntity.class, student_id);
+            s = (SubjectEntity) session.get(SubjectEntity.class, subject_id);
         } catch (HibernateException ex) {
             System.err.println(ex);
         } finally {
