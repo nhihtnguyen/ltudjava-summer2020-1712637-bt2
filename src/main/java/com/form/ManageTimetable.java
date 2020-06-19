@@ -77,6 +77,7 @@ public class ManageTimetable extends javax.swing.JFrame {
         btnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        label = new javax.swing.JLabel();
 
         lbStudentScore.setFont(new java.awt.Font("Montserrat", 0, 32)); // NOI18N
         lbStudentScore.setText("Quan ly sinh vien");
@@ -96,7 +97,6 @@ public class ManageTimetable extends javax.swing.JFrame {
         jLabel8.setText("Lop");
 
         cbxClass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        cbxClass.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbxClass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxClassActionPerformed(evt);
@@ -124,6 +124,9 @@ public class ManageTimetable extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        label.setFont(new java.awt.Font("Montserrat", 0, 36)); // NOI18N
+        label.setText("Thoi khoa bieu");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,11 +144,17 @@ public class ManageTimetable extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addComponent(btnBack)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(231, 231, 231)
+                .addComponent(label)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel8)
@@ -154,7 +163,7 @@ public class ManageTimetable extends javax.swing.JFrame {
                     .addComponent(btnImport))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addGap(58, 58, 58))
         );
 
         pack();
@@ -303,6 +312,7 @@ public class ManageTimetable extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel label;
     private javax.swing.JLabel lbStudentScore;
     // End of variables declaration//GEN-END:variables
 }

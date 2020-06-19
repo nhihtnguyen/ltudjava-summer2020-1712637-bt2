@@ -33,7 +33,7 @@ public class ManageStudentScore extends javax.swing.JFrame {
     static public String student_id ="";
     static public String fullname ="";
       private String[] columnNames = {
-        "STT", "MSSV", "Ho Ten", "Diem GK", "Diem CK", "Diem Khac", "Diem Tong"
+        "STT", "MSSV", "Ho Ten", "Diem GK", "Diem CK", "Diem Khac", "Diem Tong","Ket qua"
     };
 
     /**
@@ -387,7 +387,7 @@ public class ManageStudentScore extends javax.swing.JFrame {
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(columnNames);
         for (ClassWithSubjectEntity c : list) {
-            String[] rows = new String[7];
+            String[] rows = new String[8];
             Double midterm = c.getMidTermScore();
             Double endterm = c.getEndTermScore();
             Double otherscore = c.getOtherScore();
@@ -402,6 +402,14 @@ public class ManageStudentScore extends javax.swing.JFrame {
             rows[4] = endterm.toString();
             rows[5] = otherscore.toString();
             rows[6] = finalscore.toString();
+            if(finalscore>=5)
+            {
+            rows[7] = "Dau";
+            }
+            else
+            {
+                rows[7] = "Rot";
+            }
             tableModel.addRow(rows);
             stt++;
 
