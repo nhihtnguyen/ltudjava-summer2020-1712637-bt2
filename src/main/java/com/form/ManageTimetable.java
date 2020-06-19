@@ -43,6 +43,7 @@ public class ManageTimetable extends javax.swing.JFrame {
     public ManageTimetable() {
         initComponents();
         initLayout();
+         this.setLocationRelativeTo(null);
     }
 
     private void initLayout() {

@@ -22,6 +22,7 @@ public class AddStudent_ClassWithSubject extends javax.swing.JFrame {
     public AddStudent_ClassWithSubject() {
         initComponents();
          lbClass.setText(class_id);
+          this.setLocationRelativeTo(null);
     }
 
     /**

@@ -23,6 +23,7 @@ public class CreateRemarking extends javax.swing.JFrame {
     public CreateRemarking() {
         initComponents();
         initLayout();
+         this.setLocationRelativeTo(null);
     }
      Boolean isLoad = false;
     private final String[] dayOfMonth = {"31", "28", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31"};

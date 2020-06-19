@@ -42,6 +42,7 @@ public class ManageStudentScore extends javax.swing.JFrame {
     public ManageStudentScore() {
         initComponents();
         initLayout();
+         this.setLocationRelativeTo(null);
     }
 
     private void initLayout() {
@@ -266,7 +267,7 @@ public class ManageStudentScore extends javax.swing.JFrame {
 
     private void bt_EditScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_EditScoreActionPerformed
         // TODO add your handling code here:
-        if(!class_id.equals(""))
+        if(!student_id.equals(""))
         {
            EditScore edit=new EditScore();
             edit.setVisible(true);
@@ -274,7 +275,7 @@ public class ManageStudentScore extends javax.swing.JFrame {
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "Ch?a ch?n sinh vi?n c?n s?a.", "Notification", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Chua chon sinh vien can sua", "Notification", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_bt_EditScoreActionPerformed
 

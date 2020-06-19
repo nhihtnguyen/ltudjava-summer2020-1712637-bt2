@@ -28,7 +28,6 @@ public class AdminDashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         btnManageStudent = new javax.swing.JButton();
         btnManageSchedule = new javax.swing.JButton();
         btnManageStudentScore = new javax.swing.JButton();
@@ -37,10 +36,9 @@ public class AdminDashboard extends javax.swing.JFrame {
         btnChangePassword = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         btnListReexam = new javax.swing.JButton();
+        label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setText("Trang chu");
 
         btnManageStudent.setText("Quan Ly Sinh Vien");
         btnManageStudent.addActionListener(new java.awt.event.ActionListener() {
@@ -99,11 +97,15 @@ public class AdminDashboard extends javax.swing.JFrame {
             }
         });
 
+        label.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        label.setText("DASHBOARD");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnListReexam, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -111,29 +113,27 @@ public class AdminDashboard extends javax.swing.JFrame {
                     .addComponent(btnManageClass, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnManageStudentScore, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnManageSchedule, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(27, 27, 27)
-                            .addComponent(jLabel1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(53, 53, 53)
-                            .addComponent(btnManageStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnManageStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(label)
+                .addGap(112, 112, 112))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(13, 13, 13)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(label)
+                .addGap(18, 18, 18)
                 .addComponent(btnManageStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnManageSchedule)
                 .addGap(18, 18, 18)
-                .addComponent(btnManageStudentScore)
-                .addGap(18, 18, 18)
                 .addComponent(btnManageClass)
+                .addGap(18, 18, 18)
+                .addComponent(btnManageStudentScore)
                 .addGap(18, 18, 18)
                 .addComponent(btnReexam)
                 .addGap(18, 18, 18)
@@ -142,7 +142,7 @@ public class AdminDashboard extends javax.swing.JFrame {
                 .addComponent(btnChangePassword)
                 .addGap(18, 18, 18)
                 .addComponent(btnLogout)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(50, 50, 50))
         );
 
         pack();
@@ -242,6 +242,6 @@ public class AdminDashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnManageStudent;
     private javax.swing.JButton btnManageStudentScore;
     private javax.swing.JButton btnReexam;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel label;
     // End of variables declaration//GEN-END:variables
 }

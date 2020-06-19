@@ -30,8 +30,9 @@ public class StudentScore extends javax.swing.JFrame {
      */
     public StudentScore() {
         initComponents();
-        initTable();
+     //   initTable();
         initCbxClass();
+         this.setLocationRelativeTo(null);
     }
     private void initTable()
     {
@@ -39,6 +40,8 @@ public class StudentScore extends javax.swing.JFrame {
         ClassWithSubjectDAO classDAO = new ClassWithSubjectDAO();
         StudentDAO studentDAO = new StudentDAO();
         List<ClassWithSubjectEntity> list = classDAO.getListByStudent(student_id);
+         if (list!=null)
+        {
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(columnNames1);
         StudentEntity s = studentDAO.get(student_id);
@@ -61,6 +64,13 @@ public class StudentScore extends javax.swing.JFrame {
 
         }
         jTable1.setModel(tableModel);
+        }
+         else
+         {
+             DefaultTableModel tableModel = new DefaultTableModel();
+                       tableModel.addRow(new String[]{});
+                        jTable1.setModel(tableModel);
+         }
     }
     private void initCbxClass()
     {

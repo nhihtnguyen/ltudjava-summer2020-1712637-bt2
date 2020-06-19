@@ -27,6 +27,7 @@ public class FormRemarking extends javax.swing.JFrame {
     public FormRemarking() {
         initComponents();
         initLayout();
+         this.setLocationRelativeTo(null);
     }
     
     private void initLayout()

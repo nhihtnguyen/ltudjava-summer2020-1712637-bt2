@@ -22,7 +22,7 @@ public class EditScore extends javax.swing.JFrame {
     public EditScore() {
         initComponents();
        initlayout();
-      
+       this.setLocationRelativeTo(null);
     }
     
     private void initlayout()

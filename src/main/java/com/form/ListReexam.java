@@ -28,6 +28,7 @@ public class ListReexam extends javax.swing.JFrame {
     public ListReexam() {
         initComponents();
         ListRequest();
+         this.setLocationRelativeTo(null);
     }
   
 
