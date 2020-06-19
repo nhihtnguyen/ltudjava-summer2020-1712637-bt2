@@ -91,14 +91,14 @@ public class StudentDashboard extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(label)
                 .addGap(18, 18, 18)
-                .addComponent(btnScore)
-                .addGap(31, 31, 31)
-                .addComponent(btnReexam)
-                .addGap(37, 37, 37)
-                .addComponent(btnChangePassword)
-                .addGap(33, 33, 33)
-                .addComponent(btnLogout)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addComponent(btnScore, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnReexam, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(btnChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();

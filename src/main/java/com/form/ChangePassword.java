@@ -62,7 +62,6 @@ public class ChangePassword extends javax.swing.JFrame {
         txtPassWordAgain.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtPassWordAgain.setName("txt_password"); // NOI18N
 
-        btnSave.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnSave.setText("Luu");
         btnSave.setName("btnSave"); // NOI18N
         btnSave.addActionListener(new java.awt.event.ActionListener() {
@@ -119,9 +118,9 @@ public class ChangePassword extends javax.swing.JFrame {
                     .addComponent(txtPassWordAgain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                    .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
