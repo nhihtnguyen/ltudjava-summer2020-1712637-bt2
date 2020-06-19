@@ -78,6 +78,46 @@ public class UserDAO extends AbstractDAO<UserEntity> {
         }
         return true;
     }
+        
+         public static boolean update(UserEntity item) {
+        if (item == null) {
+            return false;
+        }
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            session.update(item);
+            transaction.commit();
+        } catch (HibernateException ex) {
+            transaction.rollback();
+            System.err.println(ex);
+        } finally {
+            session.close();
+        
+        }
+        return true;
+    }
+         
+         public static boolean updatePass(String username, String password)
+         {
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        Transaction transaction = session.getTransaction();
+        try {
+            transaction.begin();
+            String hql = "update UserEntity set password ='" + password + "' where username='" + username + "'";
+            Query query = session.createQuery(hql);
+            query.executeUpdate();
+            transaction.commit();
+        } catch (HibernateException ex) {
+            transaction.rollback();
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+        return true;
+         }
+    
     
     
     

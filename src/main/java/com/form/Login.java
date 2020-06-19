@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
  */
 public class Login extends javax.swing.JFrame {
     public static String student_id="";
+    public static int role=1;
+    public static String user_name ="";
 
     /**
      * Creates new form Login
@@ -135,11 +137,14 @@ public class Login extends javax.swing.JFrame {
         if (user != null) {
             this.setVisible(false);
             if (user.getRole() == 0) {
+                role=0;
+                user_name = username;
                 java.awt.EventQueue.invokeLater(() -> {
                     new AdminDashboard().setVisible(true);
                 });
             } else {
                  student_id = username;
+                 user_name = username;
                  System.out.println("student: "+student_id);
                 java.awt.EventQueue.invokeLater(() -> {
                    

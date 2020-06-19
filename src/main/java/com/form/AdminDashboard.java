@@ -79,8 +79,18 @@ public class AdminDashboard extends javax.swing.JFrame {
         });
 
         btnChangePassword.setText("Doi mat khau");
+        btnChangePassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChangePasswordActionPerformed(evt);
+            }
+        });
 
         btnLogout.setText("Dang Xuat");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
 
         btnListReexam.setText("Danh Sach Phuc Khao");
         btnListReexam.addActionListener(new java.awt.event.ActionListener() {
@@ -174,6 +184,19 @@ public class AdminDashboard extends javax.swing.JFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_btnListReexamActionPerformed
+
+    private void btnChangePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangePasswordActionPerformed
+        ChangePassword c = new ChangePassword();
+        c.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnChangePasswordActionPerformed
+
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+         this.setVisible(false);
+        java.awt.EventQueue.invokeLater(() -> {
+            new Login().setVisible(true);
+        });
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**
      * @param args the command line arguments
