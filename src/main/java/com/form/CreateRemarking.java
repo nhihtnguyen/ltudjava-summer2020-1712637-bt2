@@ -275,10 +275,10 @@ public class CreateRemarking extends javax.swing.JFrame {
         ReExaminationEntity item = new  ReExaminationEntity(name,dayFrom, dayTo);
         Boolean isUpdate = requestDAO.create(item);
         if (isUpdate){
-            JOptionPane.showMessageDialog(null, "Thanh cong", "Them sinh vien thanh cong !", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Thanh cong", "Them phuc khao thanh cong !", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
-            JOptionPane.showMessageDialog(null, "That bai", "Them sinh vien that bai !", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "That bai", "Them phuc khao that bai !", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
