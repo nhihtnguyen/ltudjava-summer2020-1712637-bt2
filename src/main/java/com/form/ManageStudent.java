@@ -75,6 +75,7 @@ public class ManageStudent extends javax.swing.JFrame {
         btnAddStudent = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        lbStudentScore = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -124,6 +125,9 @@ public class ManageStudent extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        lbStudentScore.setFont(new java.awt.Font("Montserrat", 0, 32)); // NOI18N
+        lbStudentScore.setText("Quan ly sinh vien");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -144,11 +148,17 @@ public class ManageStudent extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnBack)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(235, 235, 235)
+                .addComponent(lbStudentScore)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(lbStudentScore)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBack)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -313,5 +323,6 @@ public class ManageStudent extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxClass;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lbStudentScore;
     // End of variables declaration//GEN-END:variables
 }

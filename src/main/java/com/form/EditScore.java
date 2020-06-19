@@ -50,7 +50,6 @@ public class EditScore extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbEditScore = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         txtStudentId = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -65,15 +64,11 @@ public class EditScore extends javax.swing.JFrame {
         txtFinalScore = new javax.swing.JTextField();
         btnEdit = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        label = new javax.swing.JLabel();
+        label1 = new javax.swing.JLabel();
         lbScore = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        lbEditScore.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
-        lbEditScore.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbEditScore.setText("CAP NHAT DIEM LOP");
-        lbEditScore.setToolTipText("");
-        lbEditScore.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("MSSV:");
@@ -89,6 +84,11 @@ public class EditScore extends javax.swing.JFrame {
         jLabel2.setText("Ho Ten:");
 
         txtFullName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtFullName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFullNameActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel4.setText("Diem GK:");
@@ -124,53 +124,65 @@ public class EditScore extends javax.swing.JFrame {
             }
         });
 
-        lbScore.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
-        lbScore.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbScore.setToolTipText("");
-        lbScore.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        label.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        label.setText("Cap nhat diem");
+
+        label1.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+
+        lbScore.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(153, 153, 153)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lbEditScore, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(lbScore, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel7)
-                                .addComponent(jLabel8))
-                            .addGap(30, 30, 30)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtStudentId, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
-                                .addComponent(txtFullName)
-                                .addComponent(txtMidTerm)
-                                .addComponent(txtEndTerm)
-                                .addComponent(txtOtherScore)
-                                .addComponent(txtFinalScore)))))
-                .addContainerGap(131, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(192, 192, 192)
+                        .addComponent(label)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(label1)
+                                .addGap(24, 24, 24))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lbScore, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(151, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(42, 42, 42)
+                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8))
+                                .addGap(30, 30, 30)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtStudentId)
+                                    .addComponent(txtFullName)
+                                    .addComponent(txtMidTerm)
+                                    .addComponent(txtEndTerm)
+                                    .addComponent(txtOtherScore)
+                                    .addComponent(txtFinalScore, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(133, 133, 133))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbEditScore, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbScore, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(label)
+                    .addComponent(label1)
+                    .addComponent(lbScore, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtStudentId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -198,7 +210,7 @@ public class EditScore extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addGap(48, 48, 48))
         );
 
         pack();
@@ -216,10 +228,10 @@ public class EditScore extends javax.swing.JFrame {
                 
                 if(   ClassWithSubjectDAO.update(new_score)==true)
                 {
-                    JOptionPane.showMessageDialog(null, "S?a ?i?m thành công.");
+                    JOptionPane.showMessageDialog(null, "Sua diem thanh cong.");
                     txtStudentId.setText("");
                 }else{
-                    JOptionPane.showMessageDialog(null, "S?a ?i?m không thành công.");
+                    JOptionPane.showMessageDialog(null, "Sua diem khong thanh cong.");
                 }
             }
         
@@ -235,6 +247,10 @@ public class EditScore extends javax.swing.JFrame {
     private void txtStudentIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStudentIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtStudentIdActionPerformed
+
+    private void txtFullNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFullNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFullNameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -280,7 +296,8 @@ public class EditScore extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel lbEditScore;
+    private javax.swing.JLabel label;
+    private javax.swing.JLabel label1;
     private javax.swing.JLabel lbScore;
     private javax.swing.JTextField txtEndTerm;
     private javax.swing.JTextField txtFinalScore;

@@ -72,11 +72,13 @@ public class FormRemarking extends javax.swing.JFrame {
         jlabel_Password4 = new javax.swing.JLabel();
         txtScore = new javax.swing.JTextField();
         txtSubject = new javax.swing.JTextField();
+        btnBack = new javax.swing.JButton();
+        label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnSubmit.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnSubmit.setText("Phúc kh?o");
+        btnSubmit.setText("Phuc khao");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
@@ -111,6 +113,17 @@ public class FormRemarking extends javax.swing.JFrame {
         jlabel_Password4.setText("Ly do phuc khao ");
         jlabel_Password4.setToolTipText("");
 
+        btnBack.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnBack.setText("Quay Ve");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        label.setFont(new java.awt.Font("Montserrat", 0, 32)); // NOI18N
+        label.setText("Don Phuc Khao");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -118,27 +131,35 @@ public class FormRemarking extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(92, 92, 92)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jlabel_Password2)
-                    .addComponent(jlabel_Password1)
-                    .addComponent(jlabel_Username)
-                    .addComponent(jlabel_Password3)
-                    .addComponent(jlabel_Password)
-                    .addComponent(jlabel_Password4))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                    .addComponent(cbxScoreName, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSubmit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtStudentId, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtFullname, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtScore, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtSubject))
-                .addContainerGap(216, Short.MAX_VALUE))
+                    .addComponent(label)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jlabel_Password2)
+                            .addComponent(jlabel_Password1)
+                            .addComponent(jlabel_Username)
+                            .addComponent(jlabel_Password3)
+                            .addComponent(jlabel_Password)
+                            .addComponent(jlabel_Password4))
+                        .addGap(32, 32, 32)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnSubmit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                            .addComponent(cbxScoreName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtStudentId)
+                            .addComponent(txtFullname)
+                            .addComponent(txtScore)
+                            .addComponent(txtSubject, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addContainerGap(248, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(86, 86, 86)
+                .addGap(19, 19, 19)
+                .addComponent(label)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlabel_Username)
                     .addComponent(txtStudentId, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -165,9 +186,11 @@ public class FormRemarking extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlabel_Password4)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                    .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -175,14 +198,14 @@ public class FormRemarking extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -206,6 +229,12 @@ public class FormRemarking extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "That bai", "Them phuc khao that bai !", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+       StudentDashboard std = new StudentDashboard();
+        std.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,6 +273,7 @@ public class FormRemarking extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox<String> cbxScoreName;
     private javax.swing.JPanel jPanel1;
@@ -254,6 +284,7 @@ public class FormRemarking extends javax.swing.JFrame {
     private javax.swing.JLabel jlabel_Password3;
     private javax.swing.JLabel jlabel_Password4;
     private javax.swing.JLabel jlabel_Username;
+    private javax.swing.JLabel label;
     private javax.swing.JTextField txtFullname;
     private javax.swing.JEditorPane txtReason;
     private javax.swing.JTextField txtScore;

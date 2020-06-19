@@ -102,7 +102,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="bt_quayve">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Quay V&#x1ec1;"/>
+        <Property name="text" type="java.lang.String" value="Quay Ve"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_quayveActionPerformed"/>
@@ -113,7 +113,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="S&#x1ed1; sinh vi&#xea;n &#x111;&#x1ead;u:"/>
+        <Property name="text" type="java.lang.String" value="So sinh vien dau"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnImportScore">
@@ -121,7 +121,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Import B&#x1ea3;ng &#x110;i&#x1ec3;m"/>
+        <Property name="text" type="java.lang.String" value="Import Bang Diem"/>
         <Property name="name" type="java.lang.String" value="bt_importdiem" noResource="true"/>
       </Properties>
       <Events>
@@ -147,7 +147,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="T&#x1ec9; l&#x1ec7;:"/>
+        <Property name="text" type="java.lang.String" value="Ti le"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="bt_EditScore">
@@ -155,7 +155,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="S&#x1eed;a &#x110;i&#x1ec3;m"/>
+        <Property name="text" type="java.lang.String" value="Sua Diem"/>
         <Property name="name" type="java.lang.String" value="bt_EditScore" noResource="true"/>
       </Properties>
       <Events>
@@ -167,7 +167,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="T&#x1ec9; l&#x1ec7;:"/>
+        <Property name="text" type="java.lang.String" value="Ti le"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_percent1">
@@ -193,7 +193,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="S&#x1ed1; sinh vi&#xea;n r&#x1edb;t:"/>
+        <Property name="text" type="java.lang.String" value="So sinh vien rot"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_fail">
@@ -236,7 +236,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="L&#x1edb;p M&#xf4;n"/>
+        <Property name="text" type="java.lang.String" value="Lop Mon"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="cbxClassWithSubject">

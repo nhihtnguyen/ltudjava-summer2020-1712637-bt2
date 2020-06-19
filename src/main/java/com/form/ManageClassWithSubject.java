@@ -67,6 +67,7 @@ public class ManageClassWithSubject extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btnBack = new javax.swing.JButton();
+        lbStudentScore = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -124,6 +125,9 @@ public class ManageClassWithSubject extends javax.swing.JFrame {
             }
         });
 
+        lbStudentScore.setFont(new java.awt.Font("Montserrat", 0, 32)); // NOI18N
+        lbStudentScore.setText("Quan Ly Lop Mon Hoc");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -136,6 +140,8 @@ public class ManageClassWithSubject extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbStudentScore)
+                        .addGap(111, 111, 111)
                         .addComponent(btnBack))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(11, 11, 11)
@@ -151,8 +157,13 @@ public class ManageClassWithSubject extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(btnBack)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(btnBack))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbStudentScore)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbClass)
@@ -160,7 +171,7 @@ public class ManageClassWithSubject extends javax.swing.JFrame {
                     .addComponent(btnAdd)
                     .addComponent(btnRemove))
                 .addGap(23, 23, 23)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                 .addGap(30, 30, 30))
         );
 
@@ -306,5 +317,6 @@ public class ManageClassWithSubject extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lbClass;
+    private javax.swing.JLabel lbStudentScore;
     // End of variables declaration//GEN-END:variables
 }

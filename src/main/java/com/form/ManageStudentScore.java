@@ -87,7 +87,7 @@ public class ManageStudentScore extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        bt_quayve.setText("Quay V?");
+        bt_quayve.setText("Quay Ve");
         bt_quayve.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_quayveActionPerformed(evt);
@@ -95,10 +95,10 @@ public class ManageStudentScore extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel3.setText("S? sinh viên ??u:");
+        jLabel3.setText("So sinh vien dau");
 
         btnImportScore.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnImportScore.setText("Import B?ng ?i?m");
+        btnImportScore.setText("Import Bang Diem");
         btnImportScore.setName("bt_importdiem"); // NOI18N
         btnImportScore.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,10 +118,10 @@ public class ManageStudentScore extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel1.setText("T? l?:");
+        jLabel1.setText("Ti le");
 
         bt_EditScore.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        bt_EditScore.setText("S?a ?i?m");
+        bt_EditScore.setText("Sua Diem");
         bt_EditScore.setName("bt_EditScore"); // NOI18N
         bt_EditScore.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,7 +130,7 @@ public class ManageStudentScore extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel2.setText("T? l?:");
+        jLabel2.setText("Ti le");
 
         txt_percent1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txt_percent1.setText("0");
@@ -141,7 +141,7 @@ public class ManageStudentScore extends javax.swing.JFrame {
         txt_percent2.setEnabled(false);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel4.setText("S? sinh viên r?t:");
+        jLabel4.setText("So sinh vien rot");
 
         txt_fail.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txt_fail.setText("0");
@@ -168,7 +168,7 @@ public class ManageStudentScore extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable1);
 
         lbClass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lbClass.setText("L?p Môn");
+        lbClass.setText("Lop Mon");
 
         cbxClassWithSubject.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cbxClassWithSubject.addActionListener(new java.awt.event.ActionListener() {
