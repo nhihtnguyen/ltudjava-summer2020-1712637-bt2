@@ -363,12 +363,10 @@ public class ManageStudentScore extends javax.swing.JFrame {
                         
                         if (classDAO.update(new_class_subject)== true ) {
                             d++;
-                        } else {
-                            mssvnoinsert = sv[0] + ",";
-                        }
+                        } 
                     }
                 }
-                JOptionPane.showMessageDialog(this, "Da update " + d + " SV.\n MSSV chua update:" + mssvnoinsert);
+                JOptionPane.showMessageDialog(this, "Da update " + d + " sinh vien");
             } catch (IOException ex) {
                  System.err.println(ex);
             }

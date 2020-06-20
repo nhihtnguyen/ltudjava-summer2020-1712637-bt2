@@ -205,11 +205,7 @@ public class ManageClassWithSubject extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
-//        if(!class_id.equals(""))
-//        {
-//            DeleteStudent_ClassWithSubject c = new  DeleteStudent_ClassWithSubject();
-//            c.setVisible(true);
-//            this.setVisible(false);
+
              if(student_id.equals(""))
         { 
             JOptionPane.showMessageDialog(null, "Chua chon sinh vien.", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -227,13 +223,7 @@ public class ManageClassWithSubject extends javax.swing.JFrame {
         
         listStudentInClass(class_id);
              }
-            
-//        }
-//    
-//        else
-//        {
-//            JOptionPane.showMessageDialog(null, "Chua chon lop.", "Warning", JOptionPane.WARNING_MESSAGE);
-//        }
+
     }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked

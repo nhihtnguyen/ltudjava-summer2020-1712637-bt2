@@ -299,13 +299,11 @@ public class ManageStudent extends javax.swing.JFrame {
                             UserEntity new_user = new UserEntity(sv[0], sv[0], 1, "Sinh Vien");
                             if (StudentDAO.create(new_student) == true && UserDAO.create(new_user) == true) {
                                 d++;
-                            } else {
-                                mssvnoinsert = sv[0] + ",";
                             }
                         }
                     }
                 }
-                JOptionPane.showMessageDialog(this, "Da insert " + d + " SV.\n MSSV chua insert:" + mssvnoinsert);
+                JOptionPane.showMessageDialog(this, "Da insert " + d + " Sinh vien ");
             } catch (IOException ex) {
                 Logger.getLogger(ManageStudent.class.getName()).log(Level.SEVERE, null, ex);
             }

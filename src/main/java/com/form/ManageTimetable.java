@@ -187,7 +187,7 @@ public class ManageTimetable extends javax.swing.JFrame {
         if (!class_id.equals("null")) {
             xemtkb(class_id);
         } else {
-            JOptionPane.showMessageDialog(null, "Ch?a có th?i khóa bi?u.", "Notification", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Chua co thoi khoa bieu.", "Notification", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_cbxClassActionPerformed
 
@@ -244,7 +244,6 @@ public class ManageTimetable extends javax.swing.JFrame {
             br = new BufferedReader(new FileReader(csvFile));
             String line = "";
             int d = 0;
-            String mamonnoinsert = "";
             SubjectDAO subjectDAO = new  SubjectDAO();
             ClassWithSubjectDAO classDAO = new ClassWithSubjectDAO();
             StudentDAO studentDAO = new StudentDAO();
@@ -270,13 +269,11 @@ public class ManageTimetable extends javax.swing.JFrame {
                             // if (SubjectDAO.create(new_subject) == true && ClassWithSubjectDAO.create(new_class) == true)
                             if (subjectDAO.create(new_subject) == true ) {
                                 d++;
-                            } else {
-                                mamonnoinsert = sbj[0] + ",";
-                            }
+                            } 
                         }
                     
                 }
-                JOptionPane.showMessageDialog(this, "Da insert " + d + " mon.\n Mamon chua insert:" + mamonnoinsert);
+                JOptionPane.showMessageDialog(this, "Da insert " + d + " mon");
             } catch (IOException ex) {
                 Logger.getLogger(ManageStudent.class.getName()).log(Level.SEVERE, null, ex);
             }
