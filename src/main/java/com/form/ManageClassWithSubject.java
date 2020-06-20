@@ -34,6 +34,8 @@ public class ManageClassWithSubject extends javax.swing.JFrame {
     public ManageClassWithSubject() {
         initComponents();
         initLayout();
+        this.setLocationRelativeTo(null);
+
     }
 
     private void initLayout() {

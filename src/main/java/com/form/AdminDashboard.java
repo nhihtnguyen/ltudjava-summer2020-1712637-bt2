@@ -173,7 +173,7 @@ public class AdminDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_btnManageStudentScoreActionPerformed
 
     private void btnReexamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReexamActionPerformed
-        CreateRemarking c = new   CreateRemarking();
+        CreateReExamination c = new   CreateReExamination();
         c.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnReexamActionPerformed
